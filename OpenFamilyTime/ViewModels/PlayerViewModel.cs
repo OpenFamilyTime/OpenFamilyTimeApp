@@ -10,8 +10,8 @@ public partial class PlayerViewModel : ViewModelBase
     [ObservableProperty] public partial VideoSource? Current { get; set; }
     [ObservableProperty] public partial string Status { get; set; } = "No source selected";
 
-    partial void OnCurrentChanged(VideoSource? v) =>
-        Status = v == null ? "No source selected" : $"Ready: {v.Quality} - {v.Url}";
+    partial void OnCurrentChanged(VideoSource? value) =>
+        Status = value == null ? "No source selected" : $"Ready: {value.Quality} - {value.Url}";
 
     [RelayCommand]
     void OpenExternal()
