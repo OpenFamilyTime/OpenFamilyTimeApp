@@ -11,6 +11,7 @@ public partial class DetailsViewModel : ViewModelBase
     private readonly IMediaProvider _provider = new MockProvider();
     [ObservableProperty] public partial MediaDetails? Details { get; set; }
     [ObservableProperty] public partial ObservableCollection<VideoSource> Sources { get; set; } = [];
+    [ObservableProperty] public partial VideoSource? SelectedSource { get; set; }
 
     [RelayCommand]
     public async Task LoadAsync(string id)

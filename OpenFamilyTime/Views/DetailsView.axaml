@@ -10,7 +10,7 @@
         <TextBlock Text="{Binding Details.Title}" FontSize="20" FontWeight="Bold"/>
         <TextBlock Text="{Binding Details.Plot}" TextWrapping="Wrap" />
         <TextBlock Text="Sources" FontWeight="Bold" />
-        <ListBox ItemsSource="{Binding Sources}">
+        <ListBox ItemsSource="{Binding Sources}" SelectedItem="{Binding SelectedSource}">
             <ListBox.ItemTemplate><DataTemplate><TextBlock Text="{Binding Quality}" /></DataTemplate></ListBox.ItemTemplate>
         </ListBox>
     </StackPanel>

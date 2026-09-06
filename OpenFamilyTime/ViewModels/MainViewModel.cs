@@ -7,6 +7,7 @@ public partial class MainViewModel : ViewModelBase
 {
      public HomeViewModel Home { get; } = new();
      public DetailsViewModel Details { get; } = new();
+     public PlayerViewModel Player { get; } = new();
 
      public MainViewModel()
      {
@@ -14,6 +15,13 @@ public partial class MainViewModel : ViewModelBase
           {
                if (e.PropertyName == nameof(Home.Selected) && Home.Selected != null)
                     _ = Details.LoadAsync(Home.Selected.Id);
+          };
+          Details.PropertyChanged += (s, e) =>
+          {
+               if (e.PropertyName == nameof(Details.SelectedSource))
+               {
+                    Player.Current = Details.SelectedSource;
+               }
           };
      }
 }
