@@ -12,6 +12,7 @@ public partial class HomeViewModel : ViewModelBase
     private readonly IMediaProvider _provider = new MockProvider();
     [ObservableProperty] public partial ObservableCollection<SearchItem> Items { get; set; } = [];
     [ObservableProperty] public partial string Query { get; set; } = "Avengers";
+    [ObservableProperty] public partial SearchItem? Selected { get; set; }
 
     [RelayCommand]
     public async Task LoadAsync()

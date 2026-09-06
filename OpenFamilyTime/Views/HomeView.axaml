@@ -6,7 +6,7 @@
         <StackPanel Margin="16" Spacing="8">
                 <TextBox Text="{Binding Query}" PlaceholderText="Search....."/>
                 <Button Content="Load" Command="{Binding LoadCommand}"/>
-                <ListBox ItemsSource="{Binding Items}">
+                <ListBox ItemsSource="{Binding Items, Mode=TwoWay}" SelectedItem="{Binding Selected}">
                         <ListBox.ItemTemplate>
                                 <DataTemplate>
                                         <TextBlock Text="{Binding Title}" />

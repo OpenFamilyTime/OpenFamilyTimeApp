@@ -16,6 +16,10 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <views:HomeView DataContext="{Binding Home}" />
-
+    <SplitView IsPaneOpen="True" DisplayMode="CompactInline" OpenPaneLength="320">
+        <SplitView.Pane>
+            <views:HomeView DataContext="{Binding Home}"></views:HomeView>
+        </SplitView.Pane>
+        <views:DetailsView DataContext="{Binding Details}"></views:DetailsView>
+    </SplitView>
 </Window>
