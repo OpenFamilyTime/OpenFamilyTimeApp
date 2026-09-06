@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="OpenFamilyTime.Core/OpenFamilyTime.Core.csproj" />
+  <Project Path="OpenFamilyTime/OpenFamilyTime.csproj" />
+</Solution>
