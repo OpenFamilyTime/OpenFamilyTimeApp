@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OpenFamilyTime.ViewModels"
+        x:Class="OpenFamilyTime.Views.HomeView"
+        x:DataType="vm:HomeViewModel">
+        <StackPanel Margin="16" Spacing="8">
+                <TextBox Text="{Binding Query}" PlaceholderText="Search....."/>
+                <Button Content="Load" Command="{Binding LoadCommand}"/>
+                <ListBox ItemsSource="{Binding Items}">
+                        <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" />
+                                </DataTemplate>
+                        </ListBox.ItemTemplate>
+                </ListBox>
+        </StackPanel>
+</UserControl>
