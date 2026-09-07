@@ -25,9 +25,10 @@ public partial class MainViewModel : ViewModelBase
           };
           Details.PropertyChanged += (s, e) =>
           {
-               if (e.PropertyName == nameof(Details.SelectedSource))
+               if (e.PropertyName == nameof(Details.SelectedSource) && Details.SelectedSource != null)
                {
                     Player.Current = Details.SelectedSource;
+                    CurrentPage = Player;
                }
           };
      }

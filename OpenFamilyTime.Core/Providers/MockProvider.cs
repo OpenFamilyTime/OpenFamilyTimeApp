@@ -16,5 +16,5 @@ public class MockProvider : IMediaProvider
         => Task.FromResult(new MediaDetails(id, $"Title {id}", "Plot...", null, MediaType.Movie, []));
 
     public Task<List<VideoSource>> LoadSourcesAsync(string id, string? episodeId = null, CancellationToken ct = default)
-        => Task.FromResult(new List<VideoSource>{ new("https://test.m3u8","1080p",true)});
+        => Task.FromResult(new List<VideoSource>{ new("https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8","1080p",true)});
 }

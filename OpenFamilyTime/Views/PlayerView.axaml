@@ -5,11 +5,15 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OpenFamilyTime.Views.PlayerView"
              xmlns:vm="using:OpenFamilyTime.ViewModels"
-             x:DataType="vm:PlayerViewModel">
+             x:DataType="vm:PlayerViewModel"
+             xmlns:vlc="using:LibVLCSharp.Avalonia">
     <StackPanel Margin="16" Spacing="8">
         <TextBlock Text="Player" FontSize="20" FontWeight="Bold" />
+        <vlc:VideoView MediaPlayer="{Binding Player}" Height="300"/>
         <TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
-        <Button Content="Open in browser" Command="{Binding OpenExternalCommand}" />
-        <TextBlock Text="VLC embedded come next (LibVLCSharp). This proves wiring first." Opacity="0.6"/>
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <Button Content="Pause" Command="{Binding PauseCommand}"/>
+            <Button Content="Stop" Command="{Binding StopCommand}"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>
